@@ -1,7 +1,11 @@
-from flask import flask 
+from flask import Flask
 
-app = flask(__name__)
+app = Flask(__name__)
 
 @app.route("/")
 def index():
     return "welcome bloge"
+
+from mod_admin import admin
+
+app.register_blueprint(admin)
